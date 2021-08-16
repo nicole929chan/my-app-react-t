@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
+import { useUnique } from './hooks/useUnique';
 
 const ProductList = () => {
-    const [names, setNames] = useState(['apple', 'orange']);
+    const [names, add] = useUnique([]);
     const [newName, setNewName] = useState('');
 
     const map = (name, i) => <div key={i}>{name}</div>;
 
     const handleChange = (event) => setNewName(event.target.value);
-    const handleAdd = () => {
-        const s = new Set([...names, newName]);
-        setNames([...s]);
-    };
+    const handleAdd = () => add(newName);
 
     return (
         <div className='products'>
