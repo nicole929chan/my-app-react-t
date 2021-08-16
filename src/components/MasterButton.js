@@ -1,11 +1,13 @@
 import React from 'react';
 
-const MasterButton = () => {
+const MasterButton = (props) => {
+    let { masterStatus, dispatch } = props;
+
     return (
         <div>
-            <button>New master</button>
-            <button>Save master</button>
-            <button>Reset</button>
+            <button onClick={() => dispatch('new')}>New master</button>
+            <button onClick={() => dispatch('save')}>Save master</button>
+            <button onClick={() => dispatch('reset')}>Reset</button>
             <button>Submit</button>
         </div>
     );

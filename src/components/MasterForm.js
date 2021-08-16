@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const MasterForm = () => {
-    const [master, setMaster] = useState({});
     return (
         <div>
             <h3>Master Form</h3>
